@@ -80,6 +80,7 @@ namespace RainbowMage.HtmlRenderer
 
             var cefBrowserSettings = new CefBrowserSettings();
             cefBrowserSettings.WindowlessFrameRate = maxFrameRate;
+            cefBrowserSettings.DefaultEncoding = "utf-8";
 
             cefBrowserSettings.JavaScript = CefState.Enabled;
             cefBrowserSettings.JavaScriptOpenWindows = CefState.Enabled;
@@ -90,7 +91,6 @@ namespace RainbowMage.HtmlRenderer
             cefBrowserSettings.JavaScriptCloseWindows = CefState.Disabled;
             cefBrowserSettings.WebGL = CefState.Disabled; // for Spectre attack
             cefBrowserSettings.Plugins = CefState.Disabled;
-            cefBrowserSettings.ApplicationCache = CefState.Disabled;
 
             this.Client = new Client(this, width, height);
 
