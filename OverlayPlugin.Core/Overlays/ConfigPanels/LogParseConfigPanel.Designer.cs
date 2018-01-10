@@ -155,6 +155,7 @@
             this.buttonLogParseOpenDevTools.UseVisualStyleBackColor = true;
             this.buttonLogParseOpenDevTools.Click += new System.EventHandler(this.buttonLogParseOpenDevTools_Click);
             this.buttonLogParseOpenDevTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonLogParseOpenDevTools_RClick);
+            this.buttonLogParseOpenDevTools.Enabled = false;
             // 
             // buttonLogParseReloadBrowser
             // 

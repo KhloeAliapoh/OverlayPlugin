@@ -76,9 +76,21 @@ namespace RainbowMage.HtmlRenderer
 
             var cefWindowInfo = CefWindowInfo.Create();
             cefWindowInfo.SetAsWindowless(IntPtr.Zero, true);
+            cefWindowInfo.WindowlessRenderingEnabled = true;
 
             var cefBrowserSettings = new CefBrowserSettings();
             cefBrowserSettings.WindowlessFrameRate = maxFrameRate;
+
+            cefBrowserSettings.JavaScript = CefState.Enabled;
+            cefBrowserSettings.JavaScriptOpenWindows = CefState.Enabled;
+            cefBrowserSettings.JavaScriptAccessClipboard = CefState.Enabled;
+            cefBrowserSettings.JavaScriptDomPaste = CefState.Enabled;
+            cefBrowserSettings.LocalStorage = CefState.Enabled;
+
+            cefBrowserSettings.JavaScriptCloseWindows = CefState.Disabled;
+            cefBrowserSettings.WebGL = CefState.Disabled; // for Spectre attack
+            cefBrowserSettings.Plugins = CefState.Disabled;
+            cefBrowserSettings.ApplicationCache = CefState.Disabled;
 
             this.Client = new Client(this, width, height);
 
@@ -350,10 +362,15 @@ namespace RainbowMage.HtmlRenderer
                     CachePath = Cache,
                     Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
                     UserDataPath = Userdata,
-                    SingleProcess = true,
+                    SingleProcess = false,
                     MultiThreadedMessageLoop = true,
                     LogSeverity = CefLogSeverity.Disable
                 };
+
+                cefSettings.RemoteDebuggingPort = 9992;
+                cefSettings.NoSandbox = true;
+                cefSettings.CommandLineArgsDisabled = true;
+                cefSettings.EnableNetSecurityExpiration = false;
 
                 CefRuntime.Initialize(cefMainArgs, cefSettings, cefApp, IntPtr.Zero);
                 initialized = true;

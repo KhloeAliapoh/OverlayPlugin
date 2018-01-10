@@ -185,6 +185,7 @@
             this.buttonOpenDevTools.UseVisualStyleBackColor = true;
             this.buttonOpenDevTools.Click += new System.EventHandler(this.buttonOpenDevTools_Click);
             this.buttonOpenDevTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonOpenDevTools_RClick);
+            this.buttonOpenDevTools.Enabled = false;
             // 
             // buttonReloadBrowser
             // 
