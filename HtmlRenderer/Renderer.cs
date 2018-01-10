@@ -381,6 +381,7 @@ namespace RainbowMage.HtmlRenderer
         {
             if (initialized)
             {
+                CefRuntime.QuitMessageLoop();
                 CefRuntime.Shutdown();
             }
         }
