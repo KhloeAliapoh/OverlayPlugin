@@ -362,7 +362,7 @@ namespace RainbowMage.HtmlRenderer
                     CachePath = Cache,
                     Locale = System.Globalization.CultureInfo.CurrentCulture.Name,
                     UserDataPath = Userdata,
-                    SingleProcess = false,
+                    SingleProcess = true,
                     MultiThreadedMessageLoop = true,
                     LogSeverity = CefLogSeverity.Disable
                 };
