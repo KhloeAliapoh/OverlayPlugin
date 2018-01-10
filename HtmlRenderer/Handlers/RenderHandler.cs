@@ -61,6 +61,16 @@ namespace RainbowMage.HtmlRenderer
         {
 
         }
+
+        protected override CefAccessibilityHandler GetAccessibilityHandler()
+        {
+            return null;
+        }
+
+        protected override void OnImeCompositionRangeChanged(CefBrowser browser, CefRange selectedRange, CefRectangle[] characterBounds)
+        {
+
+        }
     }
 
     public class RenderEventArgs : EventArgs
