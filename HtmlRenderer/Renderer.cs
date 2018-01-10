@@ -90,7 +90,6 @@ namespace RainbowMage.HtmlRenderer
 
             cefBrowserSettings.JavaScriptCloseWindows = CefState.Disabled;
             cefBrowserSettings.WebGL = CefState.Disabled; // for Spectre attack
-            cefBrowserSettings.Plugins = CefState.Disabled;
 
             this.Client = new Client(this, width, height);
 

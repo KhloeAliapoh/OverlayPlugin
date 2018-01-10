@@ -84,6 +84,7 @@ namespace RainbowMage.OverlayPlugin
             this.special_thanks = new System.Windows.Forms.Label();
             this.repo_dev_info = new System.Windows.Forms.Label();
             this.developers = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.contextMenuLogList.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.overlayTabUI1.SuspendLayout();
@@ -436,6 +437,7 @@ namespace RainbowMage.OverlayPlugin
             // 
             // overlayPluginInformationGroupBox
             // 
+            this.overlayPluginInformationGroupBox.Controls.Add(this.label2);
             this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info_special);
             this.overlayPluginInformationGroupBox.Controls.Add(this.special_thanks);
             this.overlayPluginInformationGroupBox.Controls.Add(this.repo_dev_info);
@@ -463,6 +465,11 @@ namespace RainbowMage.OverlayPlugin
             // 
             resources.ApplyResources(this.developers, "developers");
             this.developers.Name = "developers";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
             // 
             // ControlPanel
             // 
@@ -549,5 +556,6 @@ namespace RainbowMage.OverlayPlugin
         private Button button1;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
+        private Label label2;
     }
 }
